@@ -1,5 +1,5 @@
 {
-    "name": "cusodede/yii2-multi-select-widget",
+    "name": "2amigos/yii2-multi-select-widget",
     "description": "Multiselect Bootstrap widget for Yii2.",
     "keywords": ["yii", "extension", "widget", "multiselect"],
     "type": "yii2-extension",
