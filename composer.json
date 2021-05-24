@@ -26,15 +26,11 @@
 	"prefer-stable": true,
 	"require": {
 		"php": "~7.4",
-		"yiisoft/yii2": "dev-master",
 		"npm-asset/bootstrap-multiselect": "0.9.*",
 		"npm-asset/multiselect": "0.9.*"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~9.5",
-		"friendsofphp/php-cs-fixer": "^2.0",
-		"squizlabs/php_codesniffer": "*",
-		"phpmd/phpmd": "@stable"
+		"yiisoft/yii2": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
