@@ -16,6 +16,8 @@ use yii\web\AssetBundle;
  * Class MultiSelectAsset
  */
 class MultiSelectAsset extends AssetBundle {
+	use BootstrapTrait;
+
 	public $sourcePath = '@npm/bootstrap-multiselect/dist';
 
 	public $js = [
@@ -26,7 +28,10 @@ class MultiSelectAsset extends AssetBundle {
 		'css/bootstrap-multiselect.css'
 	];
 
-	public $depends = [
-		'yii\bootstrap\BootstrapPluginAsset'
-	];
+	public function init() {
+		$this->depends = $this->isBs4()
+			?['yii\bootstrap4\BootstrapPluginAsset']
+			:['yii\bootstrap\BootstrapPluginAsset'];
+		parent::init();
+	}
 }
