@@ -34,7 +34,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"pozitronik\\multiselect\\": "src"
+			"cusodede\\multiselect\\": "src"
 		}
 	},
 	"repositories": [
