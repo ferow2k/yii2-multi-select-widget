@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 /*
  * This file is part of the 2amigos/yii2-multiselect-widget project.
@@ -10,20 +11,23 @@
 namespace dosamigos\multiselect;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
-class MultiSelectListBoxAsset extends AssetBundle
-{
-    public $sourcePath = '@npm/multiselect';
+/**
+ * Class MultiSelectListBoxAsset
+ */
+class MultiSelectListBoxAsset extends AssetBundle {
+	public $sourcePath = '@npm/multiselect';
 
-    public $js = [
-        'js/jquery.multi-select.js'
-    ];
+	public $js = [
+		'js/jquery.multi-select.js'
+	];
 
-    public $css = [
-        'css/multi-select.css'
-    ];
+	public $css = [
+		'css/multi-select.css'
+	];
 
-    public $depends = [
-        'yii\web\JqueryAsset',
-    ];
+	public $depends = [
+		JqueryAsset::class,
+	];
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 /*
  * This file is part of the 2amigos/yii2-multiselect-widget project.
@@ -9,7 +10,6 @@
 
 namespace dosamigos\multiselect;
 
-use yii\base\InvalidParamException;
 use yii\helpers\Json;
 
 /**
@@ -21,27 +21,24 @@ use yii\helpers\Json;
  * @link http://www.2amigos.us/
  * @package dosamigos\multiselect
  */
-class MultiSelectListBox extends MultiSelect
-{
-    /**
-     * Registers MultiSelect JQuery plugin and the related events
-     * @throws InvalidParamException
-     */
-    public $options=['multiple'=>'multiple'];
-    
-    protected function registerPlugin()
-    {
-        $view = $this->getView();
+class MultiSelectListBox extends MultiSelect {
+	/**
+	 * Registers MultiSelect JQuery plugin and the related events
+	 */
+	public $options = ['multiple' => 'multiple'];
 
-        MultiSelectListBoxAsset::register($view);
+	protected function registerPlugin():void {
+		$view = $this->getView();
 
-        $id = $this->options['id'];
+		MultiSelectListBoxAsset::register($view);
 
-        $options = $this->clientOptions !== false && !empty($this->clientOptions)
-            ? Json::encode($this->clientOptions)
-            : '';
+		$id = $this->options['id'];
 
-        $js = "jQuery('#$id').multiSelect($options);";
-        $view->registerJs($js);
-    }
+		$options = [] === $this->clientOptions
+			?Json::encode($this->clientOptions)
+			:'';
+
+		$js = "jQuery('#$id').multiSelect($options);";
+		$view->registerJs($js);
+	}
 }
