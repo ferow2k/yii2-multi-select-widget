@@ -21,6 +21,7 @@
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"require": {
+		"php": "~7.4",
 		"yiisoft/yii2": "dev-master",
 		"npm-asset/bootstrap-multiselect": "0.9.*",
 		"npm-asset/multiselect": "0.9.*"
