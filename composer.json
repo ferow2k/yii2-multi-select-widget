@@ -1,5 +1,5 @@
 {
-	"name": "2amigos/yii2-multi-select-widget",
+	"name": "cusodede/yii2-multi-select-widget",
 	"description": "Multiselect Bootstrap widget for Yii2.",
 	"keywords": [
 		"yii",
@@ -8,7 +8,7 @@
 		"multiselect"
 	],
 	"type": "yii2-extension",
-	"homepage": "https://github.com/2amigos/yii2-multi-select-widget",
+	"homepage": "https://github.com/cusodede/yii2-multi-select-widget",
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
@@ -16,6 +16,10 @@
 			"email": "hola@2amigos.us",
 			"homepage": "http://2amigos.us",
 			"role": "Developer"
+		},
+		{
+			"name": "Pavel Dubrovsky",
+			"email": "antikillerxxl@gmail.com"
 		}
 	],
 	"minimum-stability": "dev",
@@ -34,12 +38,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"dosamigos\\multiselect\\": "src"
-		}
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
+			"pozitronik\\multiselect\\": "src"
 		}
 	},
 	"repositories": [
