@@ -27,7 +27,7 @@
 	"require": {
 		"php": "~7.4|~8.0",
 		"npm-asset/bootstrap-multiselect": "0.9.*",
-		"npm-asset/multiselect": "0.9.*"
+		"npm-asset/multiselect": "dev-master"
 	},
 	"require-dev": {
 		"yiisoft/yii2": "dev-master"
