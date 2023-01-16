@@ -35,8 +35,8 @@ class MultiSelectListBox extends MultiSelect {
 		$id = $this->options['id'];
 
 		$options = [] === $this->clientOptions
-			?Json::encode($this->clientOptions)
-			:'';
+			?''
+			:Json::encode($this->clientOptions);
 
 		$js = "jQuery('#$id').multiSelect($options);";
 		$view->registerJs($js);
