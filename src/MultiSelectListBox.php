@@ -11,6 +11,7 @@ declare(strict_types = 1);
 namespace cusodede\multiselect;
 
 use yii\helpers\Json;
+use yii\web\JsExpression;
 
 /**
  * MultiSelectListBox renders a [Louis Cuny Multiselect listbox widget](http://loudev.com/)
@@ -27,12 +28,28 @@ class MultiSelectListBox extends MultiSelect {
 	 */
 	public $options = ['multiple' => 'multiple'];
 
+	public bool $enableFilter = true;
+	public string $selectableFilter = "<input type='text' class='selectable-filter-input' autocomplete='off'>";
+	public string $selectionFilter = "<input type='text' class='selection-filter-input' autocomplete='off'>";
+
 	protected function registerPlugin():void {
 		$view = $this->getView();
 
 		MultiSelectListBoxAsset::register($view);
 
 		$id = $this->options['id'];
+
+		if ($this->enableFilter) {
+			MultiSelectListBoxFilterAsset::register($view);
+			$filterParams = [
+				"selectableHeader" => $this->selectableFilter,
+				"selectionHeader" => $this->selectionFilter,
+				"afterInit" => new JsExpression("filterAfterInit(this)"),
+				"afterSelect" => new JsExpression("filterAfterSelect()"),
+				"afterDeselect" => new JsExpression("filterAfterDeselect()"),
+			];
+			$this->clientOptions = array_merge($this->clientOptions, $filterParams);
+		}
 
 		$options = [] === $this->clientOptions
 			?''
