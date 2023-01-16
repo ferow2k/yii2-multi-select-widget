@@ -1,6 +1,5 @@
-function afterInit(ms) {
-	var that = this,
-		$selectableSearch = that.$selectableUl.prev(),
+function afterInit(that) {
+	var $selectableSearch = that.$selectableUl.prev(),
 		$selectionSearch = that.$selectionUl.prev(),
 		selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
 		selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
@@ -22,12 +21,7 @@ function afterInit(ms) {
 		});
 };
 
-function afterSelect() {
-	this.qs1.cache();
-	this.qs2.cache();
+function quickSearchCache(that) {
+	that.qs1.cache();
+	that.qs2.cache();
 };
-
-function afterDeselect() {
-	this.qs1.cache();
-	this.qs2.cache();
-}
