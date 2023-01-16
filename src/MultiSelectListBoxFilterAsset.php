@@ -20,6 +20,6 @@ class MultiSelectListBoxFilterAsset extends AssetBundle {
 	];
 
 	public $depends = [
-		MultiSelectListBox::class,
+		MultiSelectListBoxAsset::class,
 	];
 }
