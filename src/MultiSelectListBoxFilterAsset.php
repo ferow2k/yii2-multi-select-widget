@@ -12,6 +12,7 @@ class MultiSelectListBoxFilterAsset extends AssetBundle {
 	public $sourcePath = __DIR__.'/assets';
 
 	public $js = [
+		'js/jquery.quicksearch.js',
 		'js/filter.js'
 	];
 
@@ -22,4 +23,5 @@ class MultiSelectListBoxFilterAsset extends AssetBundle {
 	public $depends = [
 		MultiSelectListBoxAsset::class,
 	];
+
 }
